@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../Context/UserContext";
+import { AuthContext } from "../Components/Context/UserContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

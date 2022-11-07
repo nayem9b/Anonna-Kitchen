@@ -9,7 +9,7 @@ import {
   signOut,
   signInWithPopup,
 } from "firebase/auth";
-import app from "../Components/Firebase/Firebase.config";
+import app from "../Firebase/Firebase.config";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
