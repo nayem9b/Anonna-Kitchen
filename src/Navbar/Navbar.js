@@ -29,7 +29,7 @@ const Navbar = () => {
           <ul class='flex items-center hidden space-x-8 lg:flex'>
             <li>
               <Link
-                to='/reviews'
+                to='/myreviews'
                 aria-label='My reviews'
                 title='My Reviews'
                 class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
@@ -38,7 +38,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to='/add_services'
+                to='/addservices'
                 aria-label='add_services'
                 title='Add Services'
                 class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
