@@ -8,7 +8,7 @@ const Cards = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
-  console.log(services);
+
   return (
     <div>
       <section class='ml-64'>
