@@ -3,13 +3,38 @@ import { AuthContext } from "../Context/UserContext";
 
 const Form = () => {
   const { user } = useContext(AuthContext);
+
+  const handleReview = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const message = form.message.value;
+    const photo = user.photoURL;
+
+    const review = {
+      name: user.displayName,
+      email: user.email,
+      message,
+      photo,
+    };
+
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div>
       <section class='bg-gray-100'>
         <div class='mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
           <div class='grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5'>
             <div class='rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12'>
-              <form action='' class='space-y-4'>
+              <form onSubmit={handleReview} action='' class='space-y-4'>
                 <div>
                   <label class='sr-only' for='name'>
                     Name
@@ -41,6 +66,7 @@ const Form = () => {
                     class='w-full rounded-lg border-gray-200 p-3 text-sm'
                     placeholder='Message'
                     rows='8'
+                    name='message'
                     id='message'></textarea>
                 </div>
 

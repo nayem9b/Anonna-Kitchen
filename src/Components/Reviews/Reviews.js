@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import UserContext, { AuthContext } from "../Context/UserContext";
 
 const Reviews = ({ rvw }) => {
-  const { name, photo, review } = rvw;
-
+  const { name, photo, message } = rvw;
+  const [personReview, setPersonReview] = useState([]);
+  const { user } = UserContext(AuthContext);
+  // fetch("http://localhost:5000/reviews")
+  //   .then((res) => res.json())
+  //   .then((data) => setPersonReview(data));
+  const newPhoto = photo.slice("");
+  console.log(newPhoto);
   return (
     <div>
       {/* <section class='bg-white'>
@@ -33,19 +40,22 @@ const Reviews = ({ rvw }) => {
       <div>
         <img
           alt='Woman'
-          src='https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+          src={newPhoto}
           class='mx-auto h-24 w-24 rounded-full object-cover shadow-xl'
         />
 
+        {/* <img
+          alt='Woman'
+          src='https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+          class='mx-auto h-24 w-24 rounded-full object-cover shadow-xl'
+        /> */}
+
         <blockquote class='-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl'>
-          <p class='text-lg font-bold text-gray-700'>Sophie Lennon</p>
+          <p class='text-lg font-bold text-gray-700'>{name}</p>
           <p class='mt-1 text-xs font-medium text-gray-500'>
             Digital Marketing at Studio
           </p>
-          <p class='mt-4 text-sm text-gray-500'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            voluptatem alias ut provident sapiente repellendus.
-          </p>
+          <p class='mt-4 text-sm text-gray-500'>{message}</p>
 
           <div class='mt-8 flex justify-center gap-0.5 text-green-500'>
             <svg

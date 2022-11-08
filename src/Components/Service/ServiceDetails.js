@@ -9,13 +9,13 @@ import SignInToWriteAReview from "../Reviews/SignInToWriteAReview";
 const ServiceDetails = () => {
   const { _id, name, price } = useLoaderData();
   const { user } = useContext(AuthContext);
-
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
+  console.log(reviews);
   return (
     <div className='grid grid-rows-2 gap-4'>
       <section>
@@ -64,6 +64,16 @@ const ServiceDetails = () => {
         <div className='divider'></div>
         {user ? (
           <>
+            {" "}
+            <div class='mx-auto max-w-screen-xl px-4  sm:px-6 lg:px-8'>
+              <AverageReview></AverageReview>
+
+              <div class='mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-2'>
+                {reviews.map((rvw) => (
+                  <Reviews key={rvw._id} rvw={rvw}></Reviews>
+                ))}
+              </div>
+            </div>
             <Form></Form>
           </>
         ) : (
