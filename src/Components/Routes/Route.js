@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddServices from "../AddServices/AddServices";
 import Blogs from "../Blogs/Blogs";
+import EditReview from "../EditReview/EditReview";
 import Home from "../Home/Home";
 import MyReviews from "../MyReviews/MyReviews";
 import Root from "../Root/Root";
@@ -30,6 +31,16 @@ export const router = createBrowserRouter([
             <MyReviews></MyReviews>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/myreviews/edit/:id",
+        element: (
+          <PrivateRoute>
+            <EditReview></EditReview>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/myreviews/edit/${params.id}`),
       },
       {
         path: "/addservices",

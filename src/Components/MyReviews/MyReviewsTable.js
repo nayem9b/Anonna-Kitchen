@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MyReviewsTable = ({ myrvw, handleDelete }) => {
+const MyReviewsTable = ({ myrvw, handleDelete, handleEdit }) => {
   const { message, _id } = myrvw;
 
   return (
@@ -12,6 +13,7 @@ const MyReviewsTable = ({ myrvw, handleDelete }) => {
         <td>Blue</td>
         <span class='inline-flex divide-x overflow-hidden rounded-md border bg-white shadow-sm'>
           <button
+            onClick={() => handleEdit(_id)}
             class='inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative'
             title='Edit Product'>
             <svg

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
 import MyReviewsTable from "./MyReviewsTable";
 
@@ -7,7 +8,7 @@ const MyReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+    fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
       },
@@ -37,6 +38,10 @@ const MyReviews = () => {
       });
     console.log(id);
   };
+  const navigate = useNavigate();
+  const handleEdit = (id) => {
+    navigate(`/myreviews/edit/${id}`);
+  };
   useEffect(() => {
     fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
       .then((res) => {
@@ -47,7 +52,7 @@ const MyReviews = () => {
       })
       .then((data) => setReviews(data));
   }, [user?.email, logout]);
-  console.log(reviews);
+
   return (
     <div>
       <div className='overflow-x-auto'>
@@ -65,7 +70,8 @@ const MyReviews = () => {
               <MyReviewsTable
                 myrvw={myrvw}
                 kry={myrvw._id}
-                handleDelete={handleDelete}></MyReviewsTable>
+                handleDelete={handleDelete}
+                handleEdit={handleEdit}></MyReviewsTable>
             ))}
           </tbody>
         </table>
