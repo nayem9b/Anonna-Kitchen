@@ -10,7 +10,6 @@ const MyReviews = () => {
   const { user, logout } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const [refresh, setRefresh] = useState(false);
-  const [work, setWork] = useState(0);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
@@ -61,7 +60,7 @@ const MyReviews = () => {
       {reviews.length ? (
         <>
           <div className=''>
-            <table className='table w-screen'>
+            <table className='table text-start '>
               <thead>
                 <tr>
                   <th></th>

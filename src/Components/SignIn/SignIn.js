@@ -143,9 +143,9 @@ const LogIn = () => {
             <div class='flex items-center justify-between'>
               <p class='text-sm text-gray-500'>
                 No account?
-                <a href='#' class='underline'>
+                <Link to='/signup' class='underline ml-2'>
                   Sign up
-                </a>
+                </Link>
               </p>
 
               <button

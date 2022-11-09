@@ -15,6 +15,8 @@ const EditReview = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
+  const { message } = review;
+
   const { sname } = review;
   const handleEditSubmit = (event) => {
     event.preventDefault();
@@ -22,9 +24,6 @@ const EditReview = () => {
     const newInfo = {
       message: event.target.review.value,
     };
-    // const form = event.target;
-    // const newReview = form.review.value;
-    // console.log(newReview);
 
     fetch(`http://localhost:5000/myreviews/edit/${id}`, {
       method: "PATCH",
@@ -36,9 +35,9 @@ const EditReview = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success("Successfully toasted!");
       });
-    // event.target.reset();
+    toast.success("Successfully updated review");
+    event.target.reset();
   };
 
   return (
@@ -69,7 +68,7 @@ const EditReview = () => {
             </label>
             <textarea
               class='w-full rounded-lg border-gray-200 p-3 text-sm'
-              placeholder='Update Review'
+              placeholder={message}
               rows='8'
               name='review'
               id='message'></textarea>

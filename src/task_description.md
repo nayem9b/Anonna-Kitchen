@@ -30,7 +30,7 @@ However, your website **cannot** be related to your **previous assignments** or 
 10. The "My reviews" page will be a private route and show only the reviews that the current user added either in a table or in cards with relevant information like - service name, review etc. There will be two buttons/icons - edit review(details in the bonus part) and **delete review** with each review. On clicking the delete button/icon, you have to delete the review, and it won't show up on that service page anymore. When the delete is successful, a toast/modal with a message will pop up to inform the user. If the user doesn't add any review, the page will show 'No reviews were added' at the middle of the page
 11. On the "Add service" page(also a private route), you can **add a service** and that service will be shown on the home page. When the service is added successfully, a toast/modal with a message will pop up to inform the user.
 12. No Fake data (data must be hosted on the database). The database could be MongoDB or any other NoSQL database.
-13. Add one more public route: Blogs. You will have to answer the following questions on the Blog page
+* Add one more public route: Blogs. You will have to answer the following questions on the Blog page
 
 	- Difference between SQL and NoSQL
 	- What is JWT, and how does it work?
@@ -45,11 +45,12 @@ However, your website **cannot** be related to your **previous assignments** or 
 
 1. The **title of the page** will change with the page you visit. It should not be the same for every route
 2. Add a meaningful favicon
-3. Add a **spinner** on the services page, and the login and register page. If data is loading, a spinner will be displayed.
+
+* Add a **spinner** on the services page, and the login and register page. If data is loading, a spinner will be displayed.
 4. use the **Environment** Environment variable on both the client (firebase config) and server-side (mongodb credentials, Access token secret). Use .gitignore file on the server side.
-5. Implement the basic version of the **JWT**  **token** for email/password-based authentication. Upon login, you will create a jwt token and store it on the client side, and for the "My reviews" page, you will send the token and verify the user. Implementing 401 and 403 is optional. 
+* Implement the basic version of the **JWT**  **token** for email/password-based authentication. Upon login, you will create a jwt token and store it on the client side, and for the "My reviews" page, you will send the token and verify the user. Implementing 401 and 403 is optional. 
 6. In the "My reviews" page, clicking the **edit review** button/icon shows that review in a modal/in a new route and lets the user update it.
-7.  **Simple challenge** In the service details page, **sort the reviews in a descending order** by inserting time(you have to keep the inserting time when you add a review, you can do it with the Date object, or you can explore MongoDB documentation). You will have to implement this code on the server side.
+*  **Simple challenge** In the service details page, **sort the reviews in a descending order** by inserting time(you have to keep the inserting time when you add a review, you can do it with the Date object, or you can explore MongoDB documentation). You will have to implement this code on the server side.
 
 ### Optional
 1. Use pagination on the services page.

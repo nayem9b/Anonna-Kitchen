@@ -122,7 +122,11 @@ const Navbar = () => {
                         aria-label='Anonna`s Kitchen'
                         title='Anonna`s Kitchen'
                         class='inline-flex items-center'>
-                        <img className='w-10 h-15' alt='Anonna`s Kitchen' />
+                        <img
+                          className='w-10 h-15'
+                          src={navicon}
+                          alt='Anonna`s Kitchen'
+                        />
                         <span class='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
                           Anonna's Kitchen
                         </span>
@@ -152,6 +156,15 @@ const Navbar = () => {
                           title='Home'
                           class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
                           Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to='/blogs'
+                          aria-label='Our product'
+                          title='Home'
+                          class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                          Blog
                         </Link>
                       </li>
 

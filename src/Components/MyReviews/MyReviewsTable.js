@@ -5,7 +5,7 @@ const MyReviewsTable = ({ myrvw, handleDelete, handleEdit }) => {
   const { sname, message, _id } = myrvw;
   return (
     <div>
-      <tr className=' hover w-full'>
+      <tr className=' hover w-full lg:grid lg:grid-cols-4 '>
         <td>{sname}</td>
         <td>{message}</td>
         {/* <td>Blue</td> */}

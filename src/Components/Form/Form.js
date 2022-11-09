@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../Context/UserContext";
 
-const Form = ({ sname }) => {
+const Form = ({ sname, reviews, setNewReviews }) => {
   const { user } = useContext(AuthContext);
   const [refresh, setRefresh] = useState([]);
+  const [newForm, setNewForm] = useState([]);
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,10 +20,9 @@ const Form = ({ sname }) => {
       sname,
     };
 
-    //  name,
-    //    photo,
-    //    info,
-    //    price,
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -31,9 +32,15 @@ const Form = ({ sname }) => {
       body: JSON.stringify(review),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+        }
+      });
+    toast.success("Successfully posted your review");
+    form.reset();
   };
-
+  console.log(reviews);
   useEffect(() => {}, []);
 
   return (
@@ -104,6 +111,7 @@ const Form = ({ sname }) => {
           </div>
         </div>
       </section>
+      <Toaster />
     </div>
   );
 };

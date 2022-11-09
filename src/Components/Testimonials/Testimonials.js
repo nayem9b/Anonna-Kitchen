@@ -29,7 +29,7 @@ const Testimonials = () => {
                 <a class='inline-flex items-center'>
                   <div className='avatar'>
                     <div className='w-12 rounded-full'>
-                      <img />
+                      <img src='https://media.istockphoto.com/id/1369136607/photo/positive-millennial-black-man-student-with-books-on-yellow.jpg?b=1&s=170667a&w=0&k=20&c=8-ioOxxomqj05pur-VwPQ294nExpiogW7-AURfUoq1Q=' />
                     </div>
                   </div>
                   <span class='flex-grow flex flex-col pl-4'>
@@ -64,7 +64,7 @@ const Testimonials = () => {
                 <a class='inline-flex items-center'>
                   <div className='avatar'>
                     <div className='w-12 rounded-full'>
-                      <img />
+                      <img src='https://media.istockphoto.com/id/1392990621/photo/smart-handsome-positive-indian-or-arabian-guy-with-glasses-in-casual-wear-student-or.jpg?b=1&s=170667a&w=0&k=20&c=kYBQv7SKom27u83XwPbuCUkcmklb8TVTnZoSTuC5Rjo=' />
                     </div>
                   </div>
                   <span class='flex-grow flex flex-col pl-4'>

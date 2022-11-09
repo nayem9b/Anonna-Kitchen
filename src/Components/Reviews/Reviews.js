@@ -5,56 +5,21 @@ const Reviews = ({ rvw }) => {
   const { name, photo, message } = rvw;
   const [personReview, setPersonReview] = useState([]);
   const { user } = UserContext(AuthContext);
-  // fetch("http://localhost:5000/reviews")
-  //   .then((res) => res.json())
-  //   .then((data) => setPersonReview(data));
+
   const newPhoto = photo?.slice("");
 
   return (
     <div>
-      {/* <section class='bg-white'>
-        <div class='mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8'>
-          <div class='mx-auto max-w-xl text-center'>
-            <h2 class='text-4xl font-bold tracking-tight sm:text-5xl'>
-              Read trusted reviews from our customers
-            </h2>
-
-            <p class='text-gring-offset-warm-gray-500 mx-auto mt-4 max-w-lg'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur praesentium natus sapiente commodi. Aliquid sunt
-              tempore iste repellendus explicabo dignissimos placeat, autem
-              harum dolore reprehenderit quis! Quo totam dignissimos earum.
-            </p>
-          </div>
-
-          <div class='mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-3'>
-           
-
-        
-
-        
-          
-          </div>
-        </div>
-      </section> */}
       <div>
         <img
-          alt='Woman'
+          alt='ph'
           src={newPhoto}
           class='mx-auto h-24 w-24 rounded-full object-cover shadow-xl'
         />
 
-        {/* <img
-          alt='Woman'
-          src='https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-          class='mx-auto h-24 w-24 rounded-full object-cover shadow-xl'
-        /> */}
-
         <blockquote class='-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl'>
           <p class='text-lg font-bold text-gray-700'>{name}</p>
-          <p class='mt-1 text-xs font-medium text-gray-500'>
-            Digital Marketing at Studio
-          </p>
+
           <p class='mt-4 text-sm text-gray-500'>{message}</p>
 
           <div class='mt-8 flex justify-center gap-0.5 text-green-500'>

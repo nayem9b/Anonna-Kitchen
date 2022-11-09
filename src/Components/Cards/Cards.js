@@ -14,7 +14,7 @@ const Cards = () => {
 
   return (
     <div className='text-center'>
-      <section class='grid grid-cols-3'>
+      <section class=''>
         <div class='flex flex-wrap mx-auto md:flex-nowrap p-12'>
           {services.map((srv) => (
             <SingleCard key={srv._id} srv={srv}></SingleCard>

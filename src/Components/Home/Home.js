@@ -6,7 +6,8 @@ import useTitle from "../Hooks/UseTitle";
 import Testimonials from "../Testimonials/Testimonials";
 import UserAddedService from "../UserAddedService/UserAddedService";
 import SeeAllButton from "./SeeAllButton/SeeAllButton";
-
+import food from "../../Images/95592-preparing-food.json";
+import Lottie from "lottie-react";
 const Home = () => {
   const [newService, setNewService] = useState([]);
   console.log(newService);
@@ -20,7 +21,7 @@ const Home = () => {
   return (
     <div>
       <Tagline></Tagline>
-      <div className='grid grid-cols-3'>
+      <div className='lg:ml-80 sm:ml-14 md:ml-24'>
         <Cards></Cards>
       </div>
 
@@ -32,11 +33,17 @@ const Home = () => {
         {" "}
         User Added Service is here
       </h1>
-      <div className='grid grid-cols-4 gap-7'>
+      <div className='grid lg:grid-cols-4 sm:grid-cols-2 gap-7'>
         {newService.map((newsrv) => (
           <UserAddedService key={newsrv._id} newsrv={newsrv}></UserAddedService>
         ))}
       </div>
+      <div className=' flex justify-center lg:ml-[400px] lg:mt-[-66px] md:h-[100px] md:w-[100px] lg:h-[800px] sm:h-[100px] sm:w-[300px] lg:w-[800px]'>
+        <Lottie animationData={food} loop={true} />
+      </div>
+      <h1 className=' text-7xl w-full text-center text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-500 lg:inline sm:text-start'>
+        Experience the deliciousness
+      </h1>
 
       <Testimonials></Testimonials>
       <Footer></Footer>

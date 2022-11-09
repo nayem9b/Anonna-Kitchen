@@ -131,12 +131,15 @@ const SignUp = () => {
                 </a>
 
                 <h1 class='mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl'>
-                  Welcome to Code Smasher
+                  Welcome to
+                  <span className='text-orange-400 text-5xl'>
+                    Anonna's
+                  </span>{" "}
+                  Kithchen
                 </h1>
 
                 <p class='mt-4 leading-relaxed text-gray-500'>
-                  A guided programme for those who want to pursue their future
-                  in web technologies
+                  A Registered chef in your locality
                 </p>
               </div>
 
@@ -260,7 +263,7 @@ const SignUp = () => {
 
                   <p class='mt-4 text-sm text-gray-500 sm:mt-0'>
                     Already have an account?
-                    <Link to='/login' class='text-gray-700 ml-2 underline'>
+                    <Link to='/signin' class='text-gray-700 ml-2 underline'>
                       Log in
                     </Link>
                     .

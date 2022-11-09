@@ -12,22 +12,22 @@ const Blogs = () => {
               Difference between SQL and NoSQL?
             </h1>
             <p className='mb-8 leading-relaxed text-justify'>
-              Cross-Origin Resource Sharing (CORS) is an HTTP-header based
-              mechanism that allows a server to indicate any origins (domain,
-              scheme, or port) other than its own from which a browser should
-              permit loading resources. CORS also relies on a mechanism by which
-              browsers make a "preflight" request to the server hosting the
-              cross-origin resource, in order to check that the server will
-              permit the actual request. In that preflight, the browser sends
-              headers that indicate the HTTP method and headers that will be
-              used in the actual request.
+              SQL is the programming language used to interface with relational
+              databases. (Relational databases model data as records in rows and
+              tables with logical links between them). NoSQL is a class of DBMs
+              that are non-relational and generally do not use SQL. <br /> There
+              are five practical differences between SQL and NoSQL: <br />{" "}
+              1.Language <br />
+              2.Scalability <br /> 3.Structure <br /> 4.Properties Support and{" "}
+              <br /> 5.communities
             </p>
             <div className='flex justify-center'></div>
           </div>
-          <div className='object-cover object-center rounded h-[168px] w-[300px]'>
+          <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
             <img
               className='object-cover object-center rounded h-[168px] w-[300px]'
               alt='hero'
+              src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191104165821/SQL-Vs-NoSQL1.png'
             />
           </div>
         </div>
@@ -39,22 +39,17 @@ const Blogs = () => {
               What is JWT, and how does it work?
             </h1>
             <p className='mb-8 leading-relaxed text-justify'>
-              Firebase Authentication aims to make building secure
-              authentication systems easy, while improving the sign-in and
-              onboarding experience for end users. It provides an end-to-end
-              identity solution, supporting email and password accounts, phone
-              auth, and Google, Twitter, Facebook, and GitHub login, and more.{" "}
-              <br />
-              There are other options beside firebase authentication. These are
-              :
-              <ul>
-                {" "}
-                <li>MongoDB</li>
-                <li>Oracle Database</li>
-                <li>Amazon Redshift</li>
-                <li>DataStax Enterprise</li>
-                <li>Db2</li>
-              </ul>
+              JSON Web Token (JWT) is an open standard (RFC 7519) for securely
+              transmitting information between parties as JSON object. It is
+              compact, readable and digitally signed using a private key/ or a
+              public key pair by the Identity Provider(IdP). So the integrity
+              and authenticity of the token can be verified by other parties
+              involved. The purpose of using JWT is not to hide data but to
+              ensure the authenticity of the data. JWT is signed and encoded,
+              not encrypted. JWT is a token based stateless authentication
+              mechanism. Since it is a client-side based stateless session,
+              server doesn't have to completely rely on a datastore(database) to
+              save session information.
             </p>
             <div className='flex justify-center'></div>
           </div>
@@ -62,6 +57,7 @@ const Blogs = () => {
             <img
               className='object-cover object-center rounded h-[168px] w-[300px]'
               alt='hero'
+              src='http://jwt.io/img/logo-asset.svg'
             />
           </div>
         </div>
@@ -73,16 +69,31 @@ const Blogs = () => {
               What is the difference between javascript and NodeJS?
             </h1>
             <p className='mb-8 leading-relaxed text-justify'>
-              The private route component is similar to the public route, the
-              only change is that redirect URL and authenticate condition. If
-              the user is not authenticated he will be redirected to the login
-              page and the user can only access the authenticated routes If he
-              is authenticated (Logged in).
+              1. JavaScript is a client-side scripting language that is
+              lightweight, cross-platform, and interpreted. Both Java and HTML
+              include it. Node.js, on the other hand, is a V8-based server-side
+              programming language. <br />
+              2. JavaScript is a simple programming language that can be used
+              with any browser that has the JavaScript Engine installed.
+              Node.js, on the other hand, is an interpreter or execution
+              environment for the JavaScript programming language. It requires
+              libraries that can be conveniently accessed from JavaScript
+              programming to be more helpful.
+              <br />
+              3.Any engine may run JavaScript. As a result, writing JavaScript
+              is incredibly easy, and any working environment is similar to a
+              complete browser. Node.js, on the other hand, only enables the V8
+              engine. Written JavaScript code, on the other hand, can run in any
+              context, regardless of whether the V8 engine is supported.
             </p>
             <div className='flex justify-center'></div>
           </div>
           <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
-            <img className='object-cover object-center rounded' alt='hero' />
+            <img
+              className='object-cover object-center rounded'
+              alt='hero'
+              src='https://blog.boot.dev/img/800/Nodejs-vs-Javascript-min.webp'
+            />
           </div>
         </div>
       </section>
@@ -93,20 +104,26 @@ const Blogs = () => {
               How does NodeJS handle multiple requests at the same time?
             </h1>
             <p className='mb-8 leading-relaxed text-justify'>
-              Node.js is an open-source backend javascript runtime environment.
-              It is a used as backend service where javascript works on the
-              server-side of the application. This way javascript is used on
-              both frontend and backend. Node.js runs on chrome v8 engine which
-              converts javascript code into machine code, it is highly scalable,
-              lightweight, fast, and data-intensive. Working of Node.js: Node.js
-              accepts the request from the clients and sends the response, while
-              working with the request node.js handles them with a single
-              thread. To operate I/O operations or requests node.js use the
-              concept of threads. Thread is a sequence of instructions that the
-              server needs to perform. It runs parallel on the server to provide
-              the information to multiple clients. Node.js is an event loop
-              single-threaded language. It can handle concurrent requests with a
-              single thread without blocking it for one request.
+              NodeJS Web Server maintains a limited Thread Pool to provide
+              services to client requests. Multiple clients make multiple
+              requests to the NodeJS server. NodeJS receives these requests and
+              places them into the EventQueue . NodeJS server has an internal
+              component referred to as the EventLoop which is an infinite loop
+              that receives requests and processes them. This EventLoop is
+              single threaded. In other words, EventLoop is the listener for the
+              EventQueue. So, we have an event queue where the requests are
+              being placed and we have an event loop listening to these requests
+              in the event queue. What happens next? The listener(the event
+              loop) processes the request and if it is able to process the
+              request without needing any blocking IO operations, then the event
+              loop would itself process the request and sends the response back
+              to the client by itself. If the current request uses blocking IO
+              operations, the event loop sees whether there are threads
+              available in the thread pool, picks up one thread from the thread
+              pool and assigns the particular request to the picked thread. That
+              thread does the blocking IO operations and sends the response back
+              to the event loop and once the response gets to the event loop,
+              the event loop sends the response back to the client.
             </p>
             <div className='flex justify-center'></div>
           </div>
@@ -114,6 +131,7 @@ const Blogs = () => {
             <img
               className='object-cover object-center rounded h-[168px] w-[300px]'
               alt='hero'
+              src='https://tsh.io/wp-content/uploads/2019/09/concurrency-nodejs_.png'
             />
           </div>
         </div>
