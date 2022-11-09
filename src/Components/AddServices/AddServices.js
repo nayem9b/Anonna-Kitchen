@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../Hooks/UseTitle";
 
 const AddServices = () => {
+  useTitle("Add-Service");
   const { user } = useContext(AuthContext);
   const handleAddService = (event) => {
     event.preventDefault();
@@ -15,13 +17,13 @@ const AddServices = () => {
 
     const Service = {
       name,
+      user: user.email,
 
       info,
       price,
     };
-
     console.log(Service);
-    fetch("http://localhost:5000/services", {
+    fetch("http://localhost:5000/newservices", {
       method: "POST",
       headers: {
         "content-type": "application/json",

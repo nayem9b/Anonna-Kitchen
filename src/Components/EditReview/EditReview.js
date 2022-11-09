@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import useTitle from "../Hooks/UseTitle";
 
 const EditReview = () => {
+  useTitle("Edit-Review");
   const router = useParams();
   const [review, setReview] = useState({});
   const { id } = router;

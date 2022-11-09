@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../Hooks/UseTitle";
 import MyReviewsTable from "./MyReviewsTable";
 
 const MyReviews = () => {
+  useTitle("My Review");
   const { user, logout } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
 
