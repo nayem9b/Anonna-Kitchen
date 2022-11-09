@@ -15,6 +15,7 @@ const EditReview = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
+  const { sname } = review;
   const handleEditSubmit = (event) => {
     event.preventDefault();
 
@@ -54,11 +55,11 @@ const EditReview = () => {
           <input
             type='text'
             id='Email'
-            name=''
-            required
+            defaultValue={sname}
+            readOnly
             class='mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm'
           />
-          <div>
+          <div className='mt-4'>
             <label for='Email' class='block text-sm font-medium text-gray-700'>
               Update Review
             </label>

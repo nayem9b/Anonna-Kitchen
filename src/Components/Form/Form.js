@@ -49,9 +49,9 @@ const Form = ({ sname }) => {
                   </label>
                   <input
                     class='w-full rounded-lg border-gray-200 p-3 text-sm'
-                    placeholder='Name'
+                    placeholder={sname}
                     type='text'
-                    id='name'
+                    readOnly
                   />
                 </div>
                 <div>
@@ -72,7 +72,7 @@ const Form = ({ sname }) => {
                   </label>
                   <textarea
                     class='w-full rounded-lg border-gray-200 p-3 text-sm'
-                    placeholder='Message'
+                    placeholder='your review here'
                     rows='8'
                     name='message'
                     id='message'></textarea>

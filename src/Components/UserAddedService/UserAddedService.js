@@ -2,7 +2,7 @@ import React from "react";
 
 const UserAddedService = ({ newsrv }) => {
   const { name, info, price } = newsrv;
-  console.log(name, info, price);
+  const newInfo = info.slice(0, 100) + "...";
   return (
     <div>
       <article class='overflow-hidden rounded-lg shadow transition hover:shadow-lg'>
@@ -21,7 +21,7 @@ const UserAddedService = ({ newsrv }) => {
             <h3 class='mt-0.5 text-2xl font-bold text-gray-900'>{name}</h3>
           </a>
 
-          <p class='mt-2 text-lg  leading-relaxed  line-clamp-3'>{info}</p>
+          <p class='mt-2 text-lg  leading-relaxed  line-clamp-3'>{newInfo}</p>
           <p class='mt-2 text-xl leading-relaxed  line-clamp-3'>
             {price} <span className='text-3xl'>৳</span>
           </p>

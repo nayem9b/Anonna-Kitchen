@@ -10,6 +10,7 @@ const MyReviews = () => {
   const { user, logout } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [work, setWork] = useState(0);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
@@ -57,27 +58,37 @@ const MyReviews = () => {
 
   return (
     <div>
-      <div className=''>
-        <table className='table w-screen'>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Service Name</th>
-              <th>Review</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reviews.map((myrvw) => (
-              <MyReviewsTable
-                myrvw={myrvw}
-                kry={myrvw._id}
-                handleDelete={handleDelete}
-                handleEdit={handleEdit}></MyReviewsTable>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {reviews.length ? (
+        <>
+          <div className=''>
+            <table className='table w-screen'>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Service Name</th>
+                  <th>Review</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {reviews.map((myrvw) => (
+                  <MyReviewsTable
+                    myrvw={myrvw}
+                    kry={myrvw._id}
+                    handleDelete={handleDelete}
+                    handleEdit={handleEdit}></MyReviewsTable>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      ) : (
+        <>
+          <h1 className='text-6xl text-center flex justify-center items-center'>
+            No review is here
+          </h1>
+        </>
+      )}
       <Toaster />
     </div>
   );
