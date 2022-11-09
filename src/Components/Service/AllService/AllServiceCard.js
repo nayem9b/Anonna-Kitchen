@@ -1,7 +1,9 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import { Link } from "react-router-dom";
 const AllServiceCard = ({ srv }) => {
-  const { name, info, photo, price } = srv;
+  const { name, info, photo, price, _id } = srv;
+  const newInfo = info.slice(0, 100) + "...";
   return (
     <div>
       <article class='group my-10'>
@@ -24,9 +26,14 @@ const AllServiceCard = ({ srv }) => {
           </div>
 
           <p class='mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3'>
-            {info}
+            {newInfo}
           </p>
         </div>
+        <Link to={`/services/${_id}`}>
+          <span class='relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75'>
+            View Details
+          </span>
+        </Link>
       </article>
     </div>
   );

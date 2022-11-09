@@ -7,7 +7,8 @@ import useTitle from "../Hooks/UseTitle";
 
 const LogIn = () => {
   useTitle("Sign In");
-  const { googleSignIn, githubSignIn, userSignIn } = useContext(AuthContext);
+  const { googleSignIn, githubSignIn, userSignIn, loading } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -16,8 +17,6 @@ const LogIn = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
-        // toast
-
         const user = result.user;
         const currentUser = {
           email: user.email,
@@ -43,6 +42,7 @@ const LogIn = () => {
         console.log(user);
       })
       .catch((error) => console.log(error));
+    loading(false);
   };
 
   // Github Login
