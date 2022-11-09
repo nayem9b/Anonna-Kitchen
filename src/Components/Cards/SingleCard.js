@@ -1,19 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const SingleCard = ({ srv }) => {
   const { name, photo, price, info, _id } = srv;
 
   return (
     <div>
-      <a href=''>
+      <button>
         <div class='flex w-full'>
           <div class='relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8'>
-            <img
+            <PhotoProvider>
+              <PhotoView src='https://images.unsplash.com/photo-1621659911279-b08ce9ff421f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'>
+                <img
+                  src='https://images.unsplash.com/photo-1621659911279-b08ce9ff421f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'
+                  alt=''
+                />
+              </PhotoView>
+            </PhotoProvider>
+
+            {/* <img
               class='object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36'
               src='https://images.unsplash.com/photo-1621659911279-b08ce9ff421f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'
               alt='blog'
-            />
+            /> */}
             <div class='px-6 py-8'>
               <h4 class='mt-4 text-2xl font-semibold text-neutral-600'>
                 <span class=''>{name}</span>
@@ -36,7 +47,7 @@ const SingleCard = ({ srv }) => {
             </div>
           </div>
         </div>
-      </a>
+      </button>
     </div>
   );
 };
