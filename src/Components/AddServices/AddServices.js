@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Context/UserContext";
 import useTitle from "../Hooks/UseTitle";
+import toast, { Toaster } from "react-hot-toast";
 
 const AddServices = () => {
   useTitle("Add-Service");
@@ -10,15 +11,11 @@ const AddServices = () => {
     const form = event.target;
     const name = form.name.value;
     const price = form.price.value;
-
     const info = form.info.value;
-
-    console.log(name, price, info);
 
     const Service = {
       name,
       user: user.email,
-
       info,
       price,
     };
@@ -31,7 +28,10 @@ const AddServices = () => {
       body: JSON.stringify(Service),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) =>
+        toast.success("Successfully added service to the homepage")
+      );
+    form.reset();
   };
   return (
     <div>
@@ -81,7 +81,7 @@ const AddServices = () => {
                   <button
                     type='submit'
                     class='inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto'>
-                    <span class='font-medium'> Send Review </span>
+                    <span class='font-medium'> Add A Service </span>
 
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -103,6 +103,7 @@ const AddServices = () => {
           </div>
         </div>
       </section>
+      <Toaster />
     </div>
   );
 };

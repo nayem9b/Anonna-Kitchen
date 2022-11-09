@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
 import useTitle from "../Hooks/UseTitle";
@@ -35,7 +36,7 @@ const MyReviews = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          console.log("deleted seccessfully");
+          toast.success("Review Deleted");
         }
       });
     console.log(id);
@@ -78,7 +79,7 @@ const MyReviews = () => {
           </tbody>
         </table>
       </div>
-      ;
+      <Toaster />
     </div>
   );
 };
