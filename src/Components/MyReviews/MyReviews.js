@@ -6,6 +6,25 @@ const MyReviews = () => {
   const { user, logout } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
+      },
+      // orders page er authorization keu jate na pay tai.eikhane authorization header
+      // tarpor bearer & local storage theke she token ta nicche
+    })
+      // amra dicchilam array kintu pacchilam object.tai nicher process ta dilam
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logout();
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [user?.email, logout]);
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/myreviews/${id}`, {
       method: "DELETE",
