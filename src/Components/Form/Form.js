@@ -17,6 +17,10 @@ const Form = () => {
       photo,
     };
 
+    //  name,
+    //    photo,
+    //    info,
+    //    price,
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {

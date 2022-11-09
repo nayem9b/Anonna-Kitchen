@@ -8,7 +8,7 @@ const Reviews = ({ rvw }) => {
   // fetch("http://localhost:5000/reviews")
   //   .then((res) => res.json())
   //   .then((data) => setPersonReview(data));
-  const newPhoto = photo.slice("");
+  const newPhoto = photo?.slice("");
   console.log(newPhoto);
   return (
     <div>
