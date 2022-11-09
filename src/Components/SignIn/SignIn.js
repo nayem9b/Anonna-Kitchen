@@ -3,8 +3,10 @@ import GoogleButton from "react-google-button";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../Hooks/UseTitle";
 
 const LogIn = () => {
+  useTitle("Sign In");
   const { googleSignIn, githubSignIn, userSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();

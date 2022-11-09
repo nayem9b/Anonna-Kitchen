@@ -4,8 +4,10 @@ import GoogleButton from "react-google-button";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../Hooks/UseTitle";
 
 const SignUp = () => {
+  useTitle("Sign Up");
   const auth = getAuth();
   const navigate = useNavigate();
   const location = useLocation();

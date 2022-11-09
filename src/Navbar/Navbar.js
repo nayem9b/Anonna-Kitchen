@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Components/Context/UserContext";
-
+import navicon from "../Images/icons8-cooking-70.png";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logout } = useContext(AuthContext);
@@ -20,32 +20,34 @@ const Navbar = () => {
             aria-label='Company'
             title='Anonna`s Kitchen'
             class='inline-flex items-center'>
-            <img className='w-10 h-15' alt=''></img>
+            <img className='w-10 h-15' src={navicon} alt=''></img>
 
             <span class='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
               Anonna's Kitchen
             </span>
           </Link>
           <ul class='flex items-center hidden space-x-8 lg:flex'>
-            <li>
-              <Link
-                to='/myreviews'
-                aria-label='My reviews'
-                title='My Reviews'
-                class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
-                My Reviews
-              </Link>
-            </li>
-            <li>
-              <Link
-                to='/addservices'
-                aria-label='add_services'
-                title='Add Services'
-                class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
-                Add Services
-              </Link>
-            </li>
+            {user ? (
+              <div>
+                <Link
+                  to='/myreviews'
+                  aria-label='My reviews'
+                  title='My Reviews'
+                  class='font-medium mr-5 tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                  My Reviews
+                </Link>
 
+                <Link
+                  to='/addservices'
+                  aria-label='add_services'
+                  title='Add Services'
+                  class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                  Add Services
+                </Link>
+              </div>
+            ) : (
+              <></>
+            )}
             <li>
               <Link
                 to='/blogs'
@@ -55,23 +57,6 @@ const Navbar = () => {
                 Blogs
               </Link>
             </li>
-
-            {user ? (
-              <div className='avatar'>
-                <div className='w-10 rounded-full'>
-                  {user.photoURL ? (
-                    <img src={user.photoURL} title={user.displayName} />
-                  ) : (
-                    <img
-                      src=' https://media.istockphoto.com/photos/positive-millennial-black-man-student-with-books-on-yellow-picture-id1369136607?b=1&k=20&m=1369136607&s=170667a&w=0&h=ENhIBRRkb8bDG6eqAFWEWg_UPljzF6t-Z9h3Ju7088k='
-                      title={user.displayName}></img>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <></>
-            )}
-
             {user ? (
               <li>
                 <Link
