@@ -1,27 +1,32 @@
 import React from "react";
 
-const UserAddedService = () => {
+const UserAddedService = ({ newsrv }) => {
+  const { name, info, price } = newsrv;
+  console.log(name, info, price);
   return (
     <div>
-      <a href='#' class='group block overflow-hidden'>
+      <article class='overflow-hidden rounded-lg shadow transition hover:shadow-lg'>
         <img
-          alt='Tee'
-          src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-          class='h-[350px] w-56 object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[450px]'
+          alt='Office'
+          src='https://www.yummyoyummy.com/wp-content/uploads/2021/09/IMG_0446-scaled.jpg'
+          class='h-56 w-full object-cover'
         />
 
-        <div class='relative bg-white pt-4'>
-          <h3 class='text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4'>
-            Basic Tee
-          </h3>
+        <div class='bg-white p-4 sm:p-6'>
+          <time datetime='2022-10-10' class='block text-xs text-gray-500'>
+            10th Oct 2022
+          </time>
 
-          <p class='mt-2'>
-            <span class='sr-only'> Regular Price </span>
+          <a>
+            <h3 class='mt-0.5 text-2xl font-bold text-gray-900'>{name}</h3>
+          </a>
 
-            <span class='tracking-wider'> £24.00 GBP </span>
+          <p class='mt-2 text-lg  leading-relaxed  line-clamp-3'>{info}</p>
+          <p class='mt-2 text-xl leading-relaxed  line-clamp-3'>
+            {price} <span className='text-3xl'>৳</span>
           </p>
         </div>
-      </a>
+      </article>
     </div>
   );
 };

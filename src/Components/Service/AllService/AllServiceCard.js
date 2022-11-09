@@ -16,9 +16,12 @@ const AllServiceCard = ({ srv }) => {
         </PhotoProvider>
 
         <div class='p-4'>
-          <button>
+          <div className='flex justify-between '>
             <h3 class='text-lg font-medium text-gray-900'>{name}</h3>
-          </button>
+            <h3 class='text-lg font-medium text-gray-900'>
+              {price} <span className='text-3xl'>৳</span>{" "}
+            </h3>
+          </div>
 
           <p class='mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3'>
             {info}

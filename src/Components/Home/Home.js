@@ -20,13 +20,19 @@ const Home = () => {
   return (
     <div>
       <Tagline></Tagline>
-      <Cards></Cards>
-      <SeeAllButton></SeeAllButton>
+      <div className='grid grid-cols-3'>
+        <Cards></Cards>
+      </div>
+
+      <div className='text-center'>
+        <SeeAllButton></SeeAllButton>
+      </div>
+
       <h1 className='text-4xl font-bold text-center mb-6 mt-6'>
         {" "}
         User Added Service is here
       </h1>
-      <div className='grid grid-cols-4'>
+      <div className='grid grid-cols-4 gap-7'>
         {newService.map((newsrv) => (
           <UserAddedService key={newsrv._id} newsrv={newsrv}></UserAddedService>
         ))}

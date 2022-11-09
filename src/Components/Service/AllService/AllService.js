@@ -15,6 +15,9 @@ const AllService = () => {
   return (
     <div>
       <section class=''>
+        <h1 className='text-center text-4xl font-bold'>
+          What <span className='text-orange-400'>Anonna</span> can cook for you
+        </h1>
         <div class=' grid grid-cols-4 gap-5 my-10 mx-auto md:flex-nowrap p-12'>
           {services.map((srv) => (
             <AllServiceCard srv={srv} key={srv._id}></AllServiceCard>

@@ -46,9 +46,8 @@ const AddServices = () => {
                   </label>
                   <input
                     class='w-full rounded-lg border-gray-200 p-3 text-sm'
-                    placeholder='Name'
+                    placeholder='Name of the Service'
                     type='text'
-                    id='name'
                     name='name'
                   />
                 </div>
@@ -58,9 +57,8 @@ const AddServices = () => {
                   </label>
                   <input
                     class='w-full rounded-lg border-gray-200 p-3 text-sm'
-                    placeholder='price'
+                    placeholder='Price'
                     type='text'
-                    id='name'
                     name='price'
                   />
                 </div>
@@ -71,7 +69,7 @@ const AddServices = () => {
                   </label>
                   <textarea
                     class='w-full rounded-lg border-gray-200 p-3 text-sm'
-                    placeholder='Message'
+                    placeholder='Details of the service'
                     rows='8'
                     name='info'
                     id='message'></textarea>
