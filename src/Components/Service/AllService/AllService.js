@@ -14,10 +14,10 @@ const AllService = () => {
   console.log(services);
   return (
     <div>
-      <section class='ml-64'>
-        <div class='flex flex-wrap mx-auto md:flex-nowrap p-12'>
+      <section class=''>
+        <div class=' grid grid-cols-4 gap-5 my-10 mx-auto md:flex-nowrap p-12'>
           {services.map((srv) => (
-            <AllServiceCard key={srv._id}></AllServiceCard>
+            <AllServiceCard srv={srv} key={srv._id}></AllServiceCard>
           ))}
         </div>
       </section>

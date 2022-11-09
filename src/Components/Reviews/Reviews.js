@@ -96,7 +96,6 @@ const Reviews = ({ rvw }) => {
           </div>
         </blockquote>
       </div>
-      ;
     </div>
   );
 };

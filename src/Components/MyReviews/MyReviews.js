@@ -9,16 +9,14 @@ const MyReviews = () => {
   useTitle("My Review");
   const { user, logout } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
       },
-      // orders page er authorization keu jate na pay tai.eikhane authorization header
-      // tarpor bearer & local storage theke she token ta nicche
     })
-      // amra dicchilam array kintu pacchilam object.tai nicher process ta dilam
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logout();
@@ -28,7 +26,7 @@ const MyReviews = () => {
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email, logout]);
+  }, [user?.email, logout, refresh]);
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/myreviews/${id}`, {
       method: "DELETE",
@@ -37,6 +35,7 @@ const MyReviews = () => {
       .then((data) => {
         if (data.deletedCount) {
           toast.success("Review Deleted");
+          setRefresh(!refresh);
         }
       });
     console.log(id);
@@ -58,14 +57,14 @@ const MyReviews = () => {
 
   return (
     <div>
-      <div className='overflow-x-auto'>
-        <table className='table w-full'>
+      <div className=''>
+        <table className='table w-screen'>
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Service Name</th>
+              <th>Review</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>

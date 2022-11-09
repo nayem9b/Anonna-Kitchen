@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/UserContext";
 
 const Form = ({ sname }) => {
   const { user } = useContext(AuthContext);
-  console.log(sname);
+  const [refresh, setRefresh] = useState([]);
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,6 +22,7 @@ const Form = ({ sname }) => {
     //    photo,
     //    info,
     //    price,
+
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
@@ -32,6 +33,8 @@ const Form = ({ sname }) => {
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
+
+  useEffect(() => {}, []);
 
   return (
     <div>

@@ -12,11 +12,8 @@ const SingleCard = ({ srv }) => {
         <div class='flex w-full'>
           <div class='relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8'>
             <PhotoProvider>
-              <PhotoView src='https://images.unsplash.com/photo-1621659911279-b08ce9ff421f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'>
-                <img
-                  src='https://images.unsplash.com/photo-1621659911279-b08ce9ff421f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'
-                  alt=''
-                />
+              <PhotoView src={photo}>
+                <img src={photo} alt='' className='h-[200px] w-[300px]' />
               </PhotoView>
             </PhotoProvider>
 

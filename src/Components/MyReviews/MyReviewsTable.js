@@ -2,15 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MyReviewsTable = ({ myrvw, handleDelete, handleEdit }) => {
-  const { message, _id } = myrvw;
-
+  const { sname, message, _id } = myrvw;
   return (
     <div>
-      <tr className='hover'>
-        <th>1</th>
-        <td>Cy Ganderton</td>
+      <tr className=' hover w-full'>
+        <td>{sname}</td>
         <td>{message}</td>
-        <td>Blue</td>
+        {/* <td>Blue</td> */}
         <span class='inline-flex divide-x overflow-hidden rounded-md border bg-white shadow-sm'>
           <button
             onClick={() => handleEdit(_id)}
