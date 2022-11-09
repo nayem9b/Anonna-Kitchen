@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Context/UserContext";
 
-const Form = () => {
+const Form = ({ sname }) => {
   const { user } = useContext(AuthContext);
-
+  console.log(sname);
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,6 +15,7 @@ const Form = () => {
       email: user.email,
       message,
       photo,
+      sname,
     };
 
     //  name,

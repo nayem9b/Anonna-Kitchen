@@ -8,6 +8,9 @@ import SignInToWriteAReview from "../Reviews/SignInToWriteAReview";
 
 const ServiceDetails = () => {
   const { _id, name, price } = useLoaderData();
+  console.log(name);
+  const sname = name;
+  console.log(sname);
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
@@ -15,7 +18,7 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-  console.log(reviews);
+
   return (
     <div className='grid grid-rows-2 gap-4'>
       <section>
@@ -74,7 +77,7 @@ const ServiceDetails = () => {
                 ))}
               </div>
             </div>
-            <Form></Form>
+            <Form sname={sname}></Form>
           </>
         ) : (
           <>

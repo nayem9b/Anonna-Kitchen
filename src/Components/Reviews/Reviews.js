@@ -9,7 +9,7 @@ const Reviews = ({ rvw }) => {
   //   .then((res) => res.json())
   //   .then((data) => setPersonReview(data));
   const newPhoto = photo?.slice("");
-  console.log(newPhoto);
+
   return (
     <div>
       {/* <section class='bg-white'>
