@@ -8,6 +8,7 @@ import UserAddedService from "../UserAddedService/UserAddedService";
 import SeeAllButton from "./SeeAllButton/SeeAllButton";
 import food from "../../Images/95592-preparing-food.json";
 import Lottie from "lottie-react";
+import Contact from "../Contact/Contact";
 const Home = () => {
   const [newService, setNewService] = useState([]);
   console.log(newService);
@@ -46,6 +47,7 @@ const Home = () => {
       </h1>
 
       <Testimonials></Testimonials>
+      <Contact></Contact>
       <Footer></Footer>
     </div>
   );

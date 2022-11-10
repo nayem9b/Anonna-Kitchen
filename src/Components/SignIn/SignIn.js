@@ -21,7 +21,6 @@ const LogIn = () => {
         const currentUser = {
           email: user.email,
         };
-        console.log(user, currentUser);
         fetch("https://server-side-psi.vercel.app/jwt", {
           method: "POST",
           headers: {
@@ -38,11 +37,10 @@ const LogIn = () => {
 
             navigate(from, { replace: true });
           });
-
+        navigate(from, { replace: true });
         console.log(user);
       })
       .catch((error) => console.log(error));
-    loading(false);
   };
 
   // Github Login
@@ -50,10 +48,29 @@ const LogIn = () => {
     githubSignIn()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        const currentUser = {
+          email: user.email,
+        };
+        fetch("https://server-side-psi.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+
+            localStorage.setItem("jwt-token", data.token);
+
+            navigate(from, { replace: true });
+          });
         navigate(from, { replace: true });
+        console.log(user);
       })
-      .then((error) => console.log(error));
+      .catch((error) => console.log(error));
   };
 
   //Email Login
@@ -84,10 +101,10 @@ const LogIn = () => {
 
             navigate(from, { replace: true });
           });
-
+        navigate(from, { replace: true });
         console.log(user);
       })
-      .catch((error) => toast.error(error.message));
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -102,7 +119,7 @@ const LogIn = () => {
             </h1>
 
             <p class='mt-4 text-gray-500 text-start'>
-              A Registered chef in your locality. Order food at a reasonable
+              A registered chef in your locality. Order food at a reasonable
               price
             </p>
           </div>

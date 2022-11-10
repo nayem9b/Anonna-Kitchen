@@ -26,7 +26,7 @@ const MyReviews = () => {
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email, logout, refresh]);
+  }, [user?.email, logout]);
   const handleDelete = (id) => {
     fetch(`https://server-side-psi.vercel.app/myreviews/${id}`, {
       method: "DELETE",
