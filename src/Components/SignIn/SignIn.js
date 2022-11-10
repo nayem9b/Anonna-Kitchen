@@ -22,7 +22,7 @@ const LogIn = () => {
           email: user.email,
         };
         console.log(user, currentUser);
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://server-side-psi.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -68,7 +68,7 @@ const LogIn = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://server-side-psi.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

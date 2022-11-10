@@ -17,12 +17,12 @@ const ServiceDetails = () => {
   const [reviews, setReviews] = useState([]);
   const [newReviews, setNewReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://server-side-psi.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?sname=${name}`)
+    fetch(`https://server-side-psi.vercel.app/reviews?sname=${name}`)
       .then((res) => res.json())
       .then((data) => setNewReviews(data));
   }, [name]);
@@ -82,7 +82,7 @@ const ServiceDetails = () => {
             <div class='mx-auto max-w-screen-xl px-4  sm:px-6 lg:px-8'>
               <AverageReview></AverageReview>
 
-              <div class='mt-8 grid grid-cols-4 gap-x-16 gap-y-12 lg:grid-cols-4'>
+              <div class='mt-8 grid lg:grid-cols-4 gap-x-16 gap-y-12 sm:grid-cols-1 md:grid-cols-2'>
                 {reviews.map((rvw) => (
                   <Reviews key={rvw._id} rvw={rvw}></Reviews>
                 ))}

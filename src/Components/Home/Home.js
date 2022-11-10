@@ -12,7 +12,7 @@ const Home = () => {
   const [newService, setNewService] = useState([]);
   console.log(newService);
   useEffect(() => {
-    fetch(`http://localhost:5000/newservices`)
+    fetch(`https://server-side-psi.vercel.app/newservices`)
       .then((res) => res.json())
       .then((data) => setNewService(data));
   }, []);
@@ -41,7 +41,7 @@ const Home = () => {
       <div className=' flex justify-center lg:ml-[400px] lg:mt-[-66px] md:h-[100px] md:w-[100px] lg:h-[800px] sm:h-[100px] sm:w-[300px] lg:w-[800px]'>
         <Lottie animationData={food} loop={true} />
       </div>
-      <h1 className=' text-7xl w-full text-center text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-500 lg:inline sm:text-start'>
+      <h1 className=' text-6xl text-center text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-500  '>
         Experience the deliciousness
       </h1>
 

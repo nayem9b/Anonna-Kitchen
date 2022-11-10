@@ -7,7 +7,7 @@ const AllService = () => {
   useTitle("All Services");
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allservices")
+    fetch("https://server-side-psi.vercel.app/allservices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -18,7 +18,7 @@ const AllService = () => {
         <h1 className='text-center text-4xl font-bold'>
           What <span className='text-orange-400'>Anonna</span> can cook for you
         </h1>
-        <div class=' grid grid-cols-4 gap-5 my-10 mx-auto md:flex-nowrap p-12'>
+        <div class=' grid lg:grid-cols-4 sm:grid-cols-1 gap-5 my-10 mx-auto md:flex-nowrap p-12'>
           {services.map((srv) => (
             <AllServiceCard srv={srv} key={srv._id}></AllServiceCard>
           ))}

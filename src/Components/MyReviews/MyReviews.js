@@ -12,7 +12,7 @@ const MyReviews = () => {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+    fetch(`https://server-side-psi.vercel.app/myreviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
       },
@@ -28,7 +28,7 @@ const MyReviews = () => {
       });
   }, [user?.email, logout, refresh]);
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myreviews/${id}`, {
+    fetch(`https://server-side-psi.vercel.app/myreviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -45,7 +45,7 @@ const MyReviews = () => {
     navigate(`/myreviews/edit/${id}`);
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
+    fetch(`https://server-side-psi.vercel.app/myreviews?email=${user?.email}`)
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logout();

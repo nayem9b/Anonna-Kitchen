@@ -20,11 +20,11 @@ const Form = ({ sname, reviews, setNewReviews }) => {
       sname,
     };
 
-    fetch("http://localhost:5000/reviews")
+    fetch("https://server-side-psi.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => console.log(data));
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://server-side-psi.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
