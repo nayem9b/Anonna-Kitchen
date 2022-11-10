@@ -13,7 +13,7 @@ const Home = () => {
   const [newService, setNewService] = useState([]);
   console.log(newService);
   useEffect(() => {
-    fetch(`https://server-side-psi.vercel.app/newservices`)
+    fetch(`https://server-side-nayem9b.vercel.app/newservices`)
       .then((res) => res.json())
       .then((data) => setNewService(data));
   }, []);

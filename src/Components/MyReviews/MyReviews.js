@@ -12,23 +12,23 @@ const MyReviews = () => {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    fetch(`https://server-side-psi.vercel.app/myreviews?email=${user?.email}`, {
+    fetch(`https://server-side-nayem9b.vercel.app/myreviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
       },
     })
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-          return logout();
+          return console.log("Unauthorized access");
         }
         return res.json();
       })
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email, logout]);
+  }, [user?.email]);
   const handleDelete = (id) => {
-    fetch(`https://server-side-psi.vercel.app/myreviews/${id}`, {
+    fetch(`https://server-side-nayem9b.vercel.app/myreviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -45,19 +45,19 @@ const MyReviews = () => {
     navigate(`/myreviews/edit/${id}`);
   };
   useEffect(() => {
-    fetch(`https://server-side-psi.vercel.app/myreviews?email=${user?.email}`)
+    fetch(`https://server-side-nayem9b.vercel.app/myreviews?email=${user?.email}`)
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-          return logout();
+          return console.log("Unauthorized access");
         }
         return res.json();
       })
       .then((data) => setReviews(data));
-  }, [user?.email, logout]);
+  }, [user?.email]);
 
   return (
     <div>
-      {reviews.length ? (
+      {reviews?.length ? (
         <>
           <div className=''>
             <table className='table text-start '>

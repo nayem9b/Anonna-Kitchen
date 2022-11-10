@@ -9,7 +9,7 @@ const EditReview = () => {
   const [review, setReview] = useState({});
   const { id } = router;
   useEffect(() => {
-    fetch(`https://server-side-psi.vercel.app/myreviews/edit/${id}`)
+    fetch(`https://server-side-nayem9b.vercel.app/myreviews/edit/${id}`)
       .then((res) => res.json())
       .then((data) => setReview(data))
       .catch((err) => console.log(err));
@@ -25,7 +25,7 @@ const EditReview = () => {
       message: event.target.review.value,
     };
 
-    fetch(`https://server-side-psi.vercel.app/myreviews/edit/${id}`, {
+    fetch(`https://server-side-nayem9b.vercel.app/myreviews/edit/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

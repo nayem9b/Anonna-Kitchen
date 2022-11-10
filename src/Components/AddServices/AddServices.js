@@ -20,7 +20,7 @@ const AddServices = () => {
       price,
     };
     console.log(Service);
-    fetch("https://server-side-psi.vercel.app/newservices", {
+    fetch("https://server-side-nayem9b.vercel.app/newservices", {
       method: "POST",
       headers: {
         "content-type": "application/json",

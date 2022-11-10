@@ -21,7 +21,7 @@ const SignUp = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch("https://server-side-psi.vercel.app/jwt", {
+        fetch("https://server-side-nayem9b.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -50,7 +50,7 @@ const SignUp = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch("https://server-side-psi.vercel.app/jwt", {
+        fetch("https://server-side-nayem9b.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -96,7 +96,7 @@ const SignUp = () => {
               const currentUser = {
                 email: user.email,
               };
-              fetch("https://server-side-psi.vercel.app/jwt", {
+              fetch("https://server-side-nayem9b.vercel.app/jwt", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",

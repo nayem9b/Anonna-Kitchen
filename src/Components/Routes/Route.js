@@ -40,7 +40,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://server-side-psi.vercel.app/myreviews/edit/${params.id}`),
+          fetch(
+            `https://server-side-nayem9b.vercel.app/myreviews/edit/${params.id}`
+          ),
       },
       {
         path: "/addservices",
@@ -58,7 +60,7 @@ export const router = createBrowserRouter([
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`https://server-side-psi.vercel.app/services/${params.id}`),
+          fetch(`https://server-side-nayem9b.vercel.app/services/${params.id}`),
       },
       {
         path: "/signup",
